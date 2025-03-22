@@ -1,0 +1,7 @@
+{
+    "name": "sergio/backend-mongo",
+    "description": "Backend en PHP con MongoDB",
+    "require": {
+        "mongodb/mongodb": "^1.21"
+    }
+}
