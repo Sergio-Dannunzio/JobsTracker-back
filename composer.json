@@ -2,6 +2,7 @@
     "name": "sergio/backend-mongo",
     "description": "Backend en PHP con MongoDB",
     "require": {
-        "mongodb/mongodb": "^1.21"
+        "mongodb/mongodb": "^1.21",
+        "vlucas/phpdotenv": "^5.6"
     }
 }
