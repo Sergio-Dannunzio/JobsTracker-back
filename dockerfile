@@ -3,7 +3,7 @@ RUN rm -rf /app/vendor
 RUN rm -f /app/composer.lock
 
 # Ejecutar instalación de dependencias
-RUN composer install
+RUN composer install --no-autoloader --ignore-platform-reqs
 
 # Usar una imagen oficial de PHP con Apache
 FROM php:8.1-apache
