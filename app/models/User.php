@@ -15,16 +15,16 @@ class User {
         }
 
         $this->client = new Client($mongoUri);
-        $this->db = $this->client->selectDatabase('jobs_db'); // Asegúrate de usar tu DB aquí
+        $this->db = $this->client->selectDatabase('jobs_db');
     }
 
     public function getAllUsers() {
-        $collection = $this->db->users; // Asumiendo que tienes una colección de usuarios
+        $collection = $this->db->users;
         return $collection->find()->toArray();
     }
 
     public function createUser($name, $email) {
-        $collection = $this->db->users; // Asumiendo que tienes una colección de usuarios
+        $collection = $this->db->users;
         $result = $collection->insertOne([
             'name' => $name,
             'email' => $email
