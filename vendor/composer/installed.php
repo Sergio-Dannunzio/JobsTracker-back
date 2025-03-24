@@ -3,7 +3,7 @@
         'name' => 'sergio/backend-mongo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f3bc4e03fd9c4580771bd46381e9b9039314eb85',
+        'reference' => '2e8a51e7a06218c19ae58b8ace8cea875a130a64',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -55,7 +55,7 @@
         'sergio/backend-mongo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f3bc4e03fd9c4580771bd46381e9b9039314eb85',
+            'reference' => '2e8a51e7a06218c19ae58b8ace8cea875a130a64',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
