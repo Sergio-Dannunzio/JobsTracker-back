@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'sergio/backend-mongo',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'd151d721dc51d2b01712ec9f568fb6c001413618',
+        'pretty_version' => '1.0.0',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -53,9 +53,9 @@
             'dev_requirement' => false,
         ),
         'sergio/backend-mongo' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'd151d721dc51d2b01712ec9f568fb6c001413618',
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

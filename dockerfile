@@ -1,3 +1,10 @@
+# Eliminar directorios de dependencias previas
+RUN rm -rf /app/vendor
+RUN rm -f /app/composer.lock
+
+# Ejecutar instalación de dependencias
+RUN composer install
+
 # Usar una imagen oficial de PHP con Apache
 FROM php:8.1-apache
 
