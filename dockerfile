@@ -2,6 +2,8 @@
 RUN rm -rf /app/vendor
 RUN rm -f /app/composer.lock
 
+RUN echo "Hello from Dockerfile"
+
 # Ejecutar instalación de dependencias
 RUN composer install --no-autoloader --ignore-platform-reqs
 
