@@ -1,5 +1,6 @@
 {
     "name": "sergio/backend-mongo",
+    "version": "1.0.0",
     "description": "Backend en PHP con MongoDB",
     "config": {
         "platform": {
@@ -8,6 +9,8 @@
     },
     "require": {
         "mongodb/mongodb": "^1.21",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "php": "^8.4",
+        "symfony/polyfill-php80": "^1.0"
     }
 }
