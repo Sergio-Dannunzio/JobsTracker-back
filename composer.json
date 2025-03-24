@@ -1,7 +1,11 @@
 {
     "name": "sergio/backend-mongo",
-    "version": "1.0.0",
     "description": "Backend en PHP con MongoDB",
+    "config": {
+        "platform": {
+            "php": "8.4.5"
+        }
+    },
     "require": {
         "mongodb/mongodb": "^1.21",
         "vlucas/phpdotenv": "^5.6"
