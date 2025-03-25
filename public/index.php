@@ -18,5 +18,4 @@ if (!$mongoUri) {
 // Incluir las rutas de la API después de cargar el .env
 require_once __DIR__ . '/../routes/api.php';
 
-echo "✅ MONGO_URI cargada: " . $mongoUri;
 ?>

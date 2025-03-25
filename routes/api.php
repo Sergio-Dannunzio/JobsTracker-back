@@ -1,29 +1,25 @@
 <?php
-require_once __DIR__ . '/../app/controllers/UserController.php';
+require_once __DIR__ . '/../app/controllers/AuthController.php';
 
-$controller = new UserController();
+$authController = new AuthController();
 
-// Obtener la ruta solicitada
-$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestUri = explode("?", $_SERVER['REQUEST_URI'])[0];
 
 switch ($requestUri) {
-    case '/users':
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $controller->getUsers();
-        }
+    case "/api/users":
+        $authController->getUsers();
         break;
-
-    /*case '/users/create':
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Obtener datos del cuerpo de la solicitud
-            $data = json_decode(file_get_contents("php://input"), true);
-            $controller->createUser($data['name'], $data['email']);
-        }
-        break;*/
-
+    case "/api/register":
+        $authController->register();
+        break;
+    case "/api/login":
+        $authController->login();
+        break;
+    case "/api/user":
+        $authController->getUserData();
+        break;
     default:
         http_response_code(404);
-        echo json_encode(["message" => "Ruta no encontrada"]);
-        break;
+        echo json_encode(["error" => "Ruta no encontrada"]);
 }
 ?>

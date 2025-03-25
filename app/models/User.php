@@ -23,12 +23,28 @@ class User {
         return $collection->find()->toArray();
     }
 
-    public function createUser($name, $email) {
-        $collection = $this->db->users;
-        $result = $collection->insertOne([
-            'name' => $name,
-            'email' => $email
-        ]);
-        return $result;
+    public function register($name, $email, $password) {
+        echo $email;
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $user = [
+            "name" => $name,
+            "email" => $email,
+            "password" => $hashedPassword
+        ];
+        return $this->db->users->insertOne($user);
     }
+
+    public function getUserByEmail($email) {
+        return $this->db->users->findOne(["email" => $email]);
+    }
+
+    /*public function login($email, $password) {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        }
+        return false;
+    }*/
 }
