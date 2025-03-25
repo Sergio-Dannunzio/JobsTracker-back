@@ -12,6 +12,7 @@
         "vlucas/phpdotenv": "^5.6",
         "php": "^8.4",
         "symfony/polyfill-php80": "^1.0",
-        "symfony/polyfill-php73": "^1.31"
+        "symfony/polyfill-php73": "^1.31",
+        "firebase/php-jwt": "^6.11"
     }
 }
