@@ -22,4 +22,14 @@ class Job {
     public function getAllJobsByUser($userId) {
         return $this->db->jobs->find(['userId' => new ObjectId($userId)])->toArray();
     }
+
+    public function addJob($userId, $name, $status, $desc) {
+        $job = [
+            "userId" => $userId,
+            "name" => $name,
+            "status" => $status,
+            "desc" => $desc
+        ];
+        return $this->db->jobs->insertOne($job);
+    }
 }

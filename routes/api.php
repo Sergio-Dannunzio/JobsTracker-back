@@ -23,6 +23,9 @@ switch ($requestUri) {
     case "/api/jobs":
         $jobController->getJobsByUser();
         break;
+    case "/api/job/add":
+        $jobController->addJob();
+        break;
     default:
         http_response_code(404);
         echo json_encode(["error" => "Ruta no encontrada"]);

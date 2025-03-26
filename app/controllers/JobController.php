@@ -4,6 +4,7 @@ require_once __DIR__ . '/../middleware/AuthMiddleware.php';
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
+use MongoDB\BSON\ObjectId;
 
 class JobController {
     private $jobModel;
@@ -38,6 +39,17 @@ class JobController {
             http_response_code(401);
             echo json_encode(["error" => "Token inválido"]);
         }
+    }
+
+    public function addJob(){
+        $data = json_decode(file_get_contents("php://input"), true);
+        $headers = getallheaders();
+        $token = str_replace("Bearer ", "", $headers['Authorization']);
+        $decoded = JWT::decode($token, new Key("clave_secreta", 'HS256'));
+
+        $userId = new ObjectId($decoded->id);
+
+        $this->jobModel->addJob($userId, $data['name'], $data['status'], $data['desc']);
     }
 
 }

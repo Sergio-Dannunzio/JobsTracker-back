@@ -24,7 +24,6 @@ class User {
     }
 
     public function register($name, $email, $password) {
-        echo $email;
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $user = [
             "name" => $name,
