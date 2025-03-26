@@ -32,4 +32,9 @@ class Job {
         ];
         return $this->db->jobs->insertOne($job);
     }
+
+    public function deleteJob($id){
+        $objectId = new ObjectId($id);
+        return $this->db->jobs->deleteOne(["_id" => $objectId]);
+    }
 }

@@ -52,4 +52,22 @@ class JobController {
         $this->jobModel->addJob($userId, $data['name'], $data['status'], $data['desc']);
     }
 
+    public function deleteJob($id){
+        try{
+
+            $objectId = new ObjectId($id);
+            $result = $this->jobModel->deleteJob($objectId);
+            
+            $this->jobModel->deleteJob($id);
+            
+            if ($result->getDeletedCount() > 0) {
+                echo json_encode(["message" => "Trabajo eliminado correctamente"]);
+            } else {
+                echo json_encode(["error" => "Trabajo no encontrado"]);
+            }
+        } catch (Exception $e) {
+            echo json_encode(["error" => "ID inválido"]);
+        }
+    }
+
 }
