@@ -72,12 +72,12 @@ class JobController {
 
     public function updateJob($id){
         try{
-
+            $dataBody = json_decode(file_get_contents("php://input"), true);
             $objectId = new ObjectId($id);
             $data = [
-                "name" => "Nuevo título",
-                "status" => "rechazado",
-                "desc" => "Nueva descripción"
+                "name" => $dataBody['name'],
+                "status" => $dataBody['status'],
+                "desc" => $dataBody['desc']
             ];
             $result = $this->jobModel->updateJob($objectId, $data);
             
