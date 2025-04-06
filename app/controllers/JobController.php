@@ -70,4 +70,25 @@ class JobController {
         }
     }
 
+    public function updateJob($id){
+        try{
+
+            $objectId = new ObjectId($id);
+            $data = [
+                "name" => "Nuevo título",
+                "status" => "rechazado",
+                "desc" => "Nueva descripción"
+            ];
+            $result = $this->jobModel->updateJob($objectId, $data);
+            
+            if ($result) {
+                echo json_encode(["message" => "Trabajo actualizado correctamente"]);
+            } else {
+                echo json_encode(["error" => "Trabajo no encontrado"]);
+            }
+        } catch (Exception $e) {
+            echo json_encode(["error" => "ID inválido"]);
+        }
+    }
+
 }

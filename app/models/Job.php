@@ -37,4 +37,13 @@ class Job {
         $objectId = new ObjectId($id);
         return $this->db->jobs->deleteOne(["_id" => $objectId]);
     }
+
+    public function updateJob($id, $data){
+        $objectId = new ObjectId($id);
+        $result = $this->db->jobs->updateOne(
+            ["_id" => $objectId],
+            ['$set' => $data]
+        );
+        return $result;
+    }
 }
